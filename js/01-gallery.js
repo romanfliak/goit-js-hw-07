@@ -39,11 +39,9 @@ list.addEventListener('click', handlerClickGallery)
 
 function handlerClickGallery(evt) {
     evt.preventDefault()
-    if (evt.target.classList.contains('gallery__image')) {
-        console.log('gallery__image', evt.target)
-    }else if(evt.target.classList.contains('gallery__items')){
-        console.log('galleryItems', evt.target)
-    }
+   if (!evt.target.classList.contains('gallery__image')){
+    return;
+   }
 const instance =basicLightbox.create(`
 <img width="1400" height="900" src="${evt.target.dataset.source}" >)
 ` , {
