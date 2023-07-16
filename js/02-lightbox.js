@@ -22,20 +22,7 @@ function createMarkup(arr) {
 list.insertAdjacentHTML('afterbegin', createMarkup(galleryItems))
 
 
-list.oneClick = (evt)=> {
-    evt.preventDefault()
-    if(evt.target.classList.contains('gallary__image')){
-        return
-    }
-}
 
-list.addEventListener('click' , handlerClickGallery);
-
-function handlerClickGallery(evt) {
-    evt.preventDefault()
-    if (!evt.target.classList.contains('gallary__image')) {
-     console.log('gallery__image', evt.target)   
-    }
     var lightbox = new SimpleLightbox('.gallery a', {captionsData: `alt`, captionDelay: 250,})
-}
+
 
